@@ -1,4 +1,12 @@
-confluence
+Description
+===========
+
+Requirements
+============
+
+Attributes
 ==========
 
-Development repository for Atlassian Confluence cookbook
+Usage
+=====
+

@@ -1,0 +1,38 @@
+#!/bin/sh -e
+# Confluence startup script
+#chkconfig: 2345 80 05
+#description: Confluence
+ 
+# Define some variables
+# Name of app ( JIRA, Confluence, etc )
+APP=confluence
+# Name of the user to run as
+USER=confluence
+# Location of application's bin directory
+CATALINA_HOME=<%= @confluence_installdir %>
+
+case "$1" in
+  # Start command
+  start)
+    echo "Starting $APP"
+    /bin/su -m $USER -c "$CATALINA_HOME/bin/startup.sh &> /dev/null"
+    ;;
+  # Stop command
+  stop)
+    echo "Stopping $APP"
+    /bin/su -m $USER -c "$CATALINA_HOME/bin/shutdown.sh &> /dev/null"
+    echo "$APP stopped successfully"
+    ;;
+   # Restart command
+   restart)
+        $0 stop
+        sleep 5
+        $0 start
+        ;;
+  *)
+    echo "Usage: /etc/init.d/$APP {start|restart|stop}"
+    exit 1
+    ;;
+esac
+ 
+exit 0
