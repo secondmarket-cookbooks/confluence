@@ -26,9 +26,9 @@ Attributes
 
 Mostly no user-servicable parts in here, but you might want to change:
 
-* node['confluence']['crowd_sso']['sso_appname']
-* node['confluence']['crowd_sso']['sso_password']
-* node['confluence']['crowd_sso']['crowd_base_url']
+* `node['confluence']['crowd_sso']['sso_appname']`
+* `node['confluence']['crowd_sso']['sso_password']`
+* `node['confluence']['crowd_sso']['crowd_base_url']`
 
 if you plan to use the crowd_sso recipe.
 
